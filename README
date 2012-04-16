@@ -1,0 +1,10 @@
+JobIO -- job posting/searching system
+
+Employers post their vacancies -- job hunters their candidatures
+Employer searches for candidates -- everybody can search for jobs
+
+Create MySQL tables as following:
+
+CREATE TABLE employers VALUES(id int key auto_increment, skill varchar(100), info text);
+CREATE TABLE candidates VALUES(id int key auto_increment, skill varchar(100), info text);
+
