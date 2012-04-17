@@ -11,7 +11,7 @@ mysql_select_db($db) or die("Could not select database '$db'");
 if($_POST['skill'] != "" && $_POST['info'] != "")
 {
 	$skill = $_POST['skill'];
-	$info = $_POST['info'];
+	$info = nl2br($_POST['info']);
 
 	$query = "INSERT INTO candidates (skill, info) VALUES ('$skill', '$info')";
 	$result = mysql_query($query);

@@ -10,6 +10,9 @@ echo "
    <b>Type of job (eg. cooking):</b><br>
    <input type=\"text\" name=\"skill\" /> <input type=\"submit\" />
    <br>
+   <a href=\"listall.php\"><font size=\"8pt\">list all available jobs</font></a>
+   <br>
+   <br>
    <div id=\"results\">
 ";
 
@@ -22,7 +25,6 @@ if($_POST['skill'] != "")
 	mysql_connect(localhost, $us, $ps) or die("Could not connect to MySQL");
 
 	mysql_select_db($db) or die("Could not select database '$db'");
-
 
 	$skill = $_POST['skill'];
 

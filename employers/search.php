@@ -10,6 +10,9 @@ echo "
    <b>Type of job (eg. cooking):</b><br>
    <input type=\"text\" name=\"skill\" /> <input type=\"submit\" />
    <br>
+   <a href=\"listall.php\"><font size=\"8pt\">list all available candidates</font></a>
+   <br>
+   <br>
    <div id=\"results\">
 ";
 
