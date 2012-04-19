@@ -5,7 +5,7 @@ echo "
  <head>
   <meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\">
   <br>
-  <h1>List of all available candidates</h1>
+  <h1>List of all available skills</h1>
   <br>
   <hr>
    <div id=\"results\">
@@ -28,7 +28,7 @@ if (!$result)
 
 $nr = mysql_numrows($result);
 
-echo "$nr people found<br><hr><br>";
+echo "Totally $nr skills available<br><hr><br>";
 
 for ($i=0; $i < $nr; $i++)
 {
