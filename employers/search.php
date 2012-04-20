@@ -1,5 +1,13 @@
 <?php
 
+$us="root";
+$ps="root";
+$db="mydb";
+
+mysql_connect(localhost, $us, $ps) or die("Could not connect to MySQL");
+
+mysql_select_db($db) or die("Could not select database '$db'");
+
 echo "
 <html>
  <head>
@@ -16,20 +24,16 @@ echo "
    <div id=\"results\">
 ";
 
-if($_POST['skill'] != "")
+$post = $_POST['skill'];
+$qstr = split('=', $_SERVER['QUERY_STRING']);
+
+if($post != '' || $qstr[1] != '')
 {
-	$us="root";
-	$ps="root";
-	$db="mydb";
-
-	mysql_connect(localhost, $us, $ps) or die("Could not connect to MySQL");
-
-	mysql_select_db($db) or die("Could not select database '$db'");
-
-
-	$skill = $_POST['skill'];
+	$skill = $post != '' ? $post : $qstr[1];
+	echo "Results for '$skill'<br>";
 
 	$query = "SELECT info FROM candidates where skill='$skill';";
+
 	$result = mysql_query($query);
 
 	if (!$result)
@@ -45,7 +49,6 @@ if($_POST['skill'] != "")
 		echo $row . '<br><hr><br>';
 	}
 
-	mysql_close();
 }
 
 echo "
@@ -55,5 +58,8 @@ echo "
  </head>
 </html>
 ";
+
+mysql_close();
+
 ?>
 

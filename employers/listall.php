@@ -28,12 +28,12 @@ if (!$result)
 
 $nr = mysql_numrows($result);
 
-echo "Totally $nr skills available<br><hr><br>";
+echo "$nr categories available<br><hr><br>";
 
 for ($i=0; $i < $nr; $i++)
 {
 	$row = mysql_result($result, $i);
-	echo $row . '<br>';
+	echo "<a href=\"search.php?q=$row\">" . $row . '</a><br>';
 }
 
 mysql_close();
