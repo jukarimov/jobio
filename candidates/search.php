@@ -56,7 +56,7 @@ if ($do_search)
 	for ($i=0; $i < $nr; $i++)
 	{
 		$row = mysql_result($result, $i);
-		echo $row . '<br><hr><br>';
+		echo '*&nbsp;' . $row . '<br><hr><br>';
 	}
 }
 

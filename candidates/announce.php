@@ -15,6 +15,13 @@ if($_POST['skill'] != "" && $_POST['info'] != "")
 
 	$query = "INSERT INTO candidates (skill, info) VALUES ('$skill', '$info')";
 	$result = mysql_query($query);
+
+	if ($result)
+		echo 'Your candidature was added, thanks!<br>';
+	else
+		echo "Something went wrong, with:<br><code>$query</code><br>";
+} else {
+	echo 'Please fill out the form<br>';
 }
 
 mysql_close();
